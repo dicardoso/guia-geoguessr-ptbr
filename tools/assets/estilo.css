@@ -1,0 +1,223 @@
+/* Guia de GeoGuessr em Português — estilo do site (licença MIT) */
+
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-2: #eef1f5;
+  --fg: #1c2128;
+  --muted: #5b6573;
+  --line: #d8dee6;
+  --accent: #0a66c2;
+  --accent-soft: #e3effb;
+  --note-bg: #fff6dc;
+  --note-line: #d9a300;
+  --note-fg: #4a3b00;
+  --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 1px 3px rgba(16, 24, 40, .08);
+  --radius: 12px;
+  --header-h: 56px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1116; --surface: #161b22; --surface-2: #1f2630; --fg: #e6e9ee; --muted: #9aa5b1;
+    --line: #2b333e; --accent: #5aa9ff; --accent-soft: #15273d; --note-bg: #2a2410;
+    --note-line: #b88a00; --note-fg: #f0e2b0; --shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1116; --surface: #161b22; --surface-2: #1f2630; --fg: #e6e9ee; --muted: #9aa5b1;
+  --line: #2b333e; --accent: #5aa9ff; --accent-soft: #15273d; --note-bg: #2a2410;
+  --note-line: #b88a00; --note-fg: #f0e2b0; --shadow: 0 1px 3px rgba(0, 0, 0, .5);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; }
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+  position: sticky; top: 0; z-index: 20; height: var(--header-h);
+  background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.topo .interno {
+  max-width: 1240px; height: 100%; margin: auto; padding: 0 16px;
+  display: flex; align-items: center; gap: 16px;
+}
+.marca { font-weight: 700; color: var(--fg); text-decoration: none; white-space: nowrap; }
+.topo nav {
+  display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0;
+  mask-image: linear-gradient(90deg, #000 90%, transparent);
+}
+.topo nav::-webkit-scrollbar { display: none; }
+.topo nav a {
+  padding: 6px 10px; border-radius: 8px; text-decoration: none; color: var(--muted);
+  white-space: nowrap; font-size: .93em;
+}
+.topo nav a:hover, .topo nav a[aria-current] { background: var(--surface-2); color: var(--fg); }
+.botao-icone {
+  flex: none; width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--fg); cursor: pointer; font-size: 17px; line-height: 1;
+}
+.botao-icone:hover { background: var(--surface-2); }
+@media (max-width: 640px) { .marca .longo { display: none; } }
+@media (min-width: 641px) { .marca .curto { display: none; } }
+
+/* ---------- Estrutura ---------- */
+.layout {
+  max-width: 1240px; margin: auto; padding: 0 16px;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px;
+}
+.layout.com-lateral { grid-template-columns: 230px minmax(0, 1fr); }
+main { padding: 28px 0 56px; min-width: 0; max-width: 940px; }
+.layout:not(.com-lateral) main { margin: auto; width: 100%; }
+
+/* ---------- Sumário lateral ---------- */
+.lateral { padding-top: 28px; }
+.lateral nav {
+  position: sticky; top: calc(var(--header-h) + 20px);
+  max-height: calc(100vh - var(--header-h) - 40px); overflow-y: auto;
+}
+.lateral h2 {
+  font-size: .78em; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 8px;
+}
+.lateral ol { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+.lateral li a {
+  display: block; padding: 6px 12px; margin-left: -2px; border-left: 2px solid transparent;
+  color: var(--muted); text-decoration: none; font-size: .92em; line-height: 1.35;
+}
+.lateral li a:hover { color: var(--fg); }
+.lateral li a.ativo { color: var(--accent); border-left-color: var(--accent); font-weight: 600; }
+.lateral .contagem { color: var(--muted); font-weight: 400; font-size: .85em; }
+
+@media (max-width: 1023px) {
+  .layout.com-lateral { grid-template-columns: minmax(0, 1fr); }
+  .lateral {
+    position: fixed; z-index: 30; left: 0; right: 0; bottom: 0; padding: 16px 16px 24px;
+    background: var(--surface); border-top: 1px solid var(--line); border-radius: 16px 16px 0 0;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .18); transform: translateY(105%); transition: transform .2s;
+    max-height: 70vh; overflow-y: auto;
+  }
+  .lateral.aberto { transform: none; }
+  .lateral nav { position: static; max-height: none; }
+}
+
+/* ---------- Cabeçalho da página ---------- */
+.trilha { font-size: .9em; color: var(--muted); margin-bottom: 4px; }
+.trilha a { color: var(--muted); }
+h1 { font-size: clamp(1.8em, 4vw, 2.4em); line-height: 1.15; margin: 0 0 12px; }
+.acoes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.botao {
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--fg);
+  text-decoration: none; font-size: .9em;
+}
+.botao:hover { background: var(--surface-2); }
+
+.capa { margin: 0 0 8px; }
+.capa img { width: 100%; max-height: 360px; object-fit: cover; border-radius: var(--radius); display: block; }
+
+/* ---------- Seções e pistas ---------- */
+h3 {
+  font-size: 1.4em; line-height: 1.3; margin: 48px 0 16px; padding-bottom: 8px;
+  border-bottom: 2px solid var(--line);
+}
+.prosa p, .prosa li { max-width: 72ch; }
+
+.pista {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 14px; margin: 16px 0;
+}
+.pista > figure, .solta { margin: 0; }
+.pista figure img, .solta img {
+  display: block; margin: auto; border-radius: 8px; cursor: zoom-in; background: var(--surface-2);
+}
+.pista .texto > :first-child { margin-top: 0; }
+.pista .texto > :last-child { margin-bottom: 0; }
+.pista .texto p { margin: 0 0 10px; }
+@media (min-width: 720px) {
+  .pista.lado { grid-template-columns: minmax(0, 11fr) minmax(0, 10fr); align-items: center; padding: 16px; gap: 20px; }
+}
+.solta { margin: 16px 0; text-align: center; }
+.solta img { max-height: 70vh; }
+figcaption { color: var(--muted); font-size: .88em; margin-top: 4px; text-align: center; }
+
+p.obs {
+  background: var(--note-bg); color: var(--note-fg); border-left: 4px solid var(--note-line);
+  padding: 8px 12px; border-radius: 6px; font-size: .94em;
+}
+p.obs strong { font-weight: 700; }
+a.pais { text-decoration: none; border-bottom: 1px dotted currentColor; }
+a.pais:hover { border-bottom-style: solid; }
+
+/* ---------- Navegação entre países ---------- */
+.vizinhos {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 48px;
+}
+.vizinhos a {
+  display: block; padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); text-decoration: none; color: var(--fg);
+}
+.vizinhos a:hover { border-color: var(--accent); }
+.vizinhos small { display: block; color: var(--muted); }
+.vizinhos .prox { text-align: right; grid-column: 2; }
+
+/* ---------- Botões flutuantes ---------- */
+.flutuantes {
+  position: fixed; right: 16px; bottom: 16px; z-index: 25; display: flex; flex-direction: column; gap: 8px;
+}
+.flutuantes button {
+  border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .18); padding: 10px 16px; font: inherit; font-size: .9em; cursor: pointer;
+}
+#topo-btn { opacity: 0; pointer-events: none; transition: opacity .2s; }
+#topo-btn.visivel { opacity: 1; pointer-events: auto; }
+@media (min-width: 1024px) { #secoes-btn { display: none; } }
+
+/* ---------- Zoom de imagem ---------- */
+dialog.zoom {
+  border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 94vh; overflow: visible;
+}
+dialog.zoom::backdrop { background: rgba(0, 0, 0, .86); }
+dialog.zoom img { max-width: 96vw; max-height: 86vh; display: block; margin: auto; border-radius: 8px; cursor: zoom-out; }
+dialog.zoom .barra {
+  display: flex; justify-content: center; gap: 10px; margin-top: 10px; color: #fff; font-size: .9em; align-items: center;
+}
+dialog.zoom .barra button, dialog.zoom .barra a {
+  background: rgba(255, 255, 255, .14); color: #fff; border: 0; border-radius: 999px;
+  padding: 6px 14px; font: inherit; cursor: pointer; text-decoration: none;
+}
+
+/* ---------- Índice ---------- */
+.intro { max-width: 72ch; }
+.busca {
+  width: 100%; padding: 12px 14px; font: inherit; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--surface); color: var(--fg); margin: 8px 0 4px;
+}
+.cartoes { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; padding: 0; list-style: none; }
+.cartoes a {
+  display: block; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); text-decoration: none; font-weight: 600; box-shadow: var(--shadow);
+}
+.cartoes a:hover { border-color: var(--accent); }
+.continente h2 { font-size: 1.05em; margin: 28px 0 8px; }
+.grade { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 2px 16px; }
+.grade a { display: block; padding: 4px 0; text-decoration: none; }
+.grade a:hover { text-decoration: underline; }
+.grade .pendente { color: var(--muted); padding: 4px 0; }
+.vazio { color: var(--muted); display: none; }
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  border-top: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: .86em;
+}
+.rodape .interno { max-width: 940px; margin: auto; padding: 20px 16px 88px; }
+.rodape p { margin: 0 0 8px; }

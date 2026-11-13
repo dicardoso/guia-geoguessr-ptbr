@@ -1,0 +1,48 @@
+Este repositório contém dois tipos de material, com licenças diferentes.
+
+======================================================================
+1. CONTEÚDO DO GUIA — CC BY-NC-SA 4.0
+   (conteudo/, original/ e as páginas HTML geradas em docs/)
+======================================================================
+
+Tradução para o português do "Plonk It Guide" (https://www.plonkit.net/guide).
+Conteúdo original © 2021-2026 Plonk It, licenciado sob Creative Commons
+Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional (CC BY-NC-SA 4.0).
+
+Alterações feitas neste projeto: o texto foi traduzido do inglês para o
+português do Brasil, limpo de defeitos de extração e reorganizado em um novo
+layout. As imagens não são redistribuídas aqui; são carregadas do site original.
+
+Esta tradução (obra derivada) é distribuída sob a mesma licença:
+CC BY-NC-SA 4.0 — https://creativecommons.org/licenses/by-nc-sa/4.0/
+Texto legal completo: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.pt
+
+Este projeto não é afiliado ao Plonk It nem endossado por ele. "Plonk It" é
+o nome do projeto original e é usado aqui apenas para fins de atribuição.
+
+======================================================================
+2. CÓDIGO — Licença MIT
+   (tools/ e a folha de estilo docs/estilo.css)
+======================================================================
+
+MIT License
+
+Copyright (c) 2026 Diogo Cardoso
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
