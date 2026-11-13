@@ -35,8 +35,8 @@ continente), `docs/quiz.html` (adivinhe o país a partir de uma pista) e `docs/p
 usado pelos dois. Tudo funciona tanto no GitHub Pages quanto abrindo os arquivos direto do disco.
 
 Para mudar o visual, edite `tools/assets/estilo.css` (não o de `docs/`, que é sobrescrito no build).
-Depois de criar o repositório, preencha `LINK_ERROS` em `tools/build.py` com o link das issues
-para aparecer "Reportar um erro de tradução" no rodapé.
+O link "Reportar um erro de tradução" do rodapé vem de `LINK_ERROS` em `tools/build.py`
+(aponta para as issues do repositório).
 
 ## Como editar uma tradução
 
@@ -65,22 +65,19 @@ python -I tools/verificar.py conteudo/en conteudo/pt
 O verificador aponta as páginas cujo inglês mudou (número de linhas diferente) e que precisam
 ser revisadas.
 
-## Publicar no GitHub Pages
+## Publicação (GitHub Pages)
 
-1. Crie um repositório no GitHub (ex.: `plonkit-ptbr`).
-2. Nesta pasta:
+Repositório: <https://github.com/dicardoso/guia-geoguessr-ptbr>
+Site: <https://dicardoso.github.io/guia-geoguessr-ptbr/>
 
-   ```
-   git init
-   git add .
-   git commit -m "Tradução do Plonk It Guide para PT-BR"
-   git branch -M main
-   git remote add origin https://github.com/<seu-usuario>/plonkit-ptbr.git
-   git push -u origin main
-   ```
+O site é servido da pasta `/docs` da branch `main`
+(**Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `main`, pasta `/docs`).
 
-3. No GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
-   branch `main`, pasta `/docs`. Em um ou dois minutos o site fica em
-   `https://<seu-usuario>.github.io/plonkit-ptbr/`.
+Sempre que alterar `conteudo/pt/`, rode o build e faça commit da pasta `docs/` também:
 
-Sempre que alterar `conteudo/pt/`, rode o build e faça commit da pasta `docs/` também.
+```
+python -I tools/build.py conteudo/pt docs
+git add -A
+git commit -m "Descreva a alteração"
+git push
+```

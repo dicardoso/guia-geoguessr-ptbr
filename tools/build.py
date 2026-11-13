@@ -27,7 +27,7 @@ ORIGINAL = "https://www.plonkit.net"
 LICENCA = "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br"
 ASSETS = Path(__file__).parent / "assets"
 # Link para reportar erros de tradução (ex.: https://github.com/<usuario>/<repo>/issues). Vazio = não mostra.
-LINK_ERROS = ""
+LINK_ERROS = "https://github.com/dicardoso/guia-geoguessr-ptbr/issues"
 
 # Linhas finais de cada página original (formulário de feedback do Plonk It e aviso de licença).
 # São removidas: a licença já está no rodapé e erros de tradução não devem ir para o Plonk It.
