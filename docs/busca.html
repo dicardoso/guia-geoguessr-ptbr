@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buscar nas pistas · Guia de GeoGuessr em Português</title>
+<meta name="description" content="Busque em todas as pistas do guia de GeoGuessr em português.">
+<script>try{var t=localStorage.getItem('tema');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="topo"><div class="interno"><a class="marca" href="index.html"><span class="longo">Guia de GeoGuessr em Português</span><span class="curto">Guia GeoGuessr PT</span></a><nav aria-label="Principal"><a href="index.html">Países</a><a href="busca.html" aria-current=page>Buscar pistas</a><a href="quiz.html">Quiz</a><a href="beginners-guide.html">Guia para iniciantes</a><a href="maps.html">Diretório de mapas</a><a href="tools.html">Ferramentas</a><a href="spillover-countries.html">Países de spillover</a></nav><button id="tema-btn" class="botao-icone" type="button" aria-label="Trocar tema">◐</button></div></header>
+<div class="layout">
+<main>
+<div class="trilha"><a href="index.html">Início</a> › Explorar</div>
+<h1>Buscar nas pistas</h1>
+<p class="intro">Procure em todas as pistas do guia de uma vez: “poste escada”, “placa amarela”,
+“terra vermelha”, “cirílico”… Combine com os filtros para ver, por exemplo, todos os bollards da Europa.</p>
+<div class="busca-form">
+  <input id="q" class="busca" type="search" placeholder="O que você está vendo?" aria-label="Termos da busca" autocomplete="off" autofocus>
+  <select id="cont" class="seletor" aria-label="Continente"><option value="">Todos os continentes</option></select>
+</div>
+<div id="cats" class="chips" role="group" aria-label="Categorias"></div>
+<p class="aviso-filtro">As categorias são automáticas (por palavras-chave) e podem falhar em alguns casos.</p>
+<p id="status" class="status" aria-live="polite">Carregando índice…</p>
+<ol id="resultados" class="resultados"></ol>
+<button id="mais" class="botao mais" type="button" hidden>Mostrar mais resultados</button>
+</main>
+</div>
+<footer class="rodape"><div class="interno"><p>Tradução não oficial do <a href="https://www.plonkit.net">Plonk It Guide</a>, conteúdo original © 2021-2026 Plonk It, licenciado sob <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br">CC BY-NC-SA 4.0</a>. <strong>Alterações:</strong> texto traduzido para o português e reorganizado em um novo layout; as imagens são carregadas do site original. Esta tradução é distribuída sob a mesma licença. <a href="https://www.plonkit.net">Ver esta página no original (inglês)</a>.</p><p>Este site não é afiliado ao Plonk It nem endossado por ele. Erros de tradução são responsabilidade deste projeto, não da equipe do Plonk It.</p></div></footer>
+<div class="flutuantes"><button id="topo-btn" type="button" aria-label="Voltar ao topo">↑ Topo</button></div>
+<dialog id="zoom" class="zoom" aria-label="Imagem ampliada"><img alt=""><div class="barra"><button class="ant" type="button" aria-label="Imagem anterior">←</button><span class="pos"></span><button class="prox" type="button" aria-label="Próxima imagem">→</button><a class="orig" target="_blank" rel="noopener">Abrir</a><button class="fechar" type="button">Fechar ✕</button></div></dialog>
+<script src="site.js" defer></script>
+<script src="pistas.js" defer></script><script src="busca.js" defer></script>
+</body>
+</html>

@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-<header class="topo"><div class="interno"><a class="marca" href="index.html"><span class="longo">Guia de GeoGuessr em Português</span><span class="curto">Guia GeoGuessr PT</span></a><nav aria-label="Principal"><a href="index.html">Países</a><a href="beginners-guide.html">Guia para iniciantes</a><a href="maps.html" aria-current=page>Diretório de mapas</a><a href="tools.html">Ferramentas</a><a href="spillover-countries.html">Países de spillover</a></nav><button id="tema-btn" class="botao-icone" type="button" aria-label="Trocar tema">◐</button></div></header>
+<header class="topo"><div class="interno"><a class="marca" href="index.html"><span class="longo">Guia de GeoGuessr em Português</span><span class="curto">Guia GeoGuessr PT</span></a><nav aria-label="Principal"><a href="index.html">Países</a><a href="busca.html">Buscar pistas</a><a href="quiz.html">Quiz</a><a href="beginners-guide.html">Guia para iniciantes</a><a href="maps.html" aria-current=page>Diretório de mapas</a><a href="tools.html">Ferramentas</a><a href="spillover-countries.html">Países de spillover</a></nav><button id="tema-btn" class="botao-icone" type="button" aria-label="Trocar tema">◐</button></div></header>
 <div class="layout com-lateral">
 <aside class="lateral" aria-label="Seções da página"><nav><h2>Nesta página</h2><ol><li><a href="#mapas-mundi">Mapas-múndi <span class="contagem">· 61</span></a></li><li><a href="#outros-mapas-mundi">Outros mapas-múndi <span class="contagem">· 35</span></a></li><li><a href="#mapas-mundi-tematicos">Mapas-múndi temáticos <span class="contagem">· 20</span></a></li><li><a href="#mapas-de-cobertura-nao-oficial">Mapas de cobertura não oficial <span class="contagem">· 9</span></a></li><li><a href="#mapas-regionais">Mapas regionais <span class="contagem">· 17</span></a></li></ol></nav></aside>
 <main>
 <div class="trilha"><a href="index.html">Início</a> › Guias gerais</div>
 <h1>Diretório de mapas</h1>
 <div class="acoes"><a class="botao" href="https://www.plonkit.net/maps" target="_blank" rel="noopener">Ver original em inglês ↗</a></div>
-<div class="pista"><figure><a href="https://www.plonkit.net/images/resize/1920/80/map-directory/hero.webp"><img src="https://www.plonkit.net/images/resize/1920/80/map-directory/hero.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista" id="p1"><figure><a href="https://www.plonkit.net/images/resize/1920/80/map-directory/hero.webp"><img src="https://www.plonkit.net/images/resize/1920/80/map-directory/hero.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Pode ser bem difícil encontrar mapas de alta qualidade, já que as próprias ferramentas do GeoGuessr para descobrir mapas não são muito boas. Esta página é um diretório de mapas recomendados pelo Plonk It, em várias categorias diferentes.</p>
 <p>Todos os mapas desta página atendem pelo menos aos seguintes requisitos mínimos:</p>
 <ul>
@@ -27,16 +27,16 @@
 <li>Um grande número de locais. Isso depende do tipo de mapa: um bom mapa-múndi deve ter dezenas de milhares de locais. Um mapa temático já pode ter alta qualidade com apenas algumas centenas de locais.</li>
 </ul>
 </div></div>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="Pinpointable" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p2"><figure><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="Pinpointable" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Mapas pinpointable terão este ícone.</p>
 </div></div>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="Escolhido a dedo" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p3"><figure><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="Escolhido a dedo" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>A mão representa mapas totalmente escolhidos a dedo pelo criador, e o computador representa mapas feitos com um map-generator.</p>
 </div></div>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/loc-count.webp"><img src="https://www.plonkit.net/images/map-directory/loc-count.webp" alt="Quantidade de locais" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p4"><figure><a href="https://www.plonkit.net/images/map-directory/loc-count.webp"><img src="https://www.plonkit.net/images/map-directory/loc-count.webp" alt="Quantidade de locais" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Este pin mostrará a quantidade aproximada de locais em cada mapa.</p>
 </div></div>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="Dificuldade" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p5"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="Dificuldade" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Uma avaliação subjetiva da dificuldade do mapa feita pelos editores do Plonk It.</p>
 <p>Ir para a seção</p>
 <ul>
@@ -47,42 +47,42 @@
 </ul>
 </div></div>
 <h3 id="mapas-mundi">Mapas-múndi</h3>
-<div class="prosa">
+<div class="prosa" id="p6">
 <p>Esta seção traz mapas-múndi destinados à jogabilidade regular. Embora apenas alguns mapas desta categoria sejam pinpointable - e, portanto, ideais para tentativas de 25k -, todos servem para jogar NM e NMPZ, bem como Country Streaks e para buscar um Highscore.</p>
 <p>A Community World (ACW) - Link do mapa</p>
 </div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p7"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • pinpointable • mais de 105 mil locais</p>
 <p>An Official World (AOW) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p8"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • pinpointable • mais de 109 mil locais</p>
 <p>O mapa usado na Copa do Mundo do GeoGuessr. Adequado a todos os modos de jogo, traz uma grande quantidade de rodadas com informações perto do local inicial.</p>
 <p>An Arbitrary World (AAW) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p9"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 110 mil locais</p>
 <p>Outra alternativa ao mapa-múndi padrão. Seus locais escolhidos arbitrariamente têm a vantagem de não serem conhecidos por um grande grupo de criadores de mapas (ao contrário do ACW).</p>
 <p>AI Generated World (AI Gen) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p10"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Mistura de escolhido a dedo e escolhido arbitrariamente • não pinpointable • mais de 135 mil locais</p>
 <p>A maioria dos locais deste mapa é gerada arbitrariamente. No entanto, uma minoria significativa de locais é escolhida a dedo pelo criador. Esses locais tendem a ser mais difíceis, o que dá ao mapa a reputação de ser bastante difícil.</p>
 <p>An Improved World (AIW) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p11"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 110 mil locais</p>
 <p>Um mapa escolhido a dedo com muito potencial de rejogabilidade. Tem uma distribuição que favorece países grandes mais do que o habitual. A diversidade de locais é alta, incluindo locais como cidades com muita informação e estradas de terra rurais remotas. O mapa foi feito para ser jogado nos formatos No Move/NMPZ. Há também uma versão deste mapa sem locais de shitcam.</p>
 <p>A Moving World (AMW) - Link do mapa</p>
@@ -90,84 +90,84 @@
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p12"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • pinpointable • mais de 100 mil locais</p>
 <p>Um mapa escolhido a dedo com muito potencial de rejogabilidade, criado por uma equipe de mais de 70 mapeadores experientes. Como é otimizado para jogos Moving, os locais ficarão a no máximo 60 segundos de uma pista útil.</p>
 <p>A Varied World (AVW) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p13"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 100 mil locais</p>
 <p>Um mapa bem equilibrado, com grande variedade de tipos de local. Este mapa traz muitos lugares remotos reconhecíveis, mas não se esquece das áreas urbanas.</p>
 <p>A Souvlaki World (ASW) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p14"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 110 mil locais</p>
 <p>Um mapa com uma diversidade de locais incrível e uma infinidade de locais interessantes, mantendo ainda locais representativos e desafiadores o bastante para ser um mapa competitivo viável.</p>
 <p>Supersonic - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p15"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 110 mil locais</p>
 <p>O Supersonic usa todos os truques possíveis para alcançar a maior proporção possível de locais interessantes. Por exemplo, este mapa evita estradas principais e dá peso excessivo a estradas de terra e a locais perto do litoral ou em grande altitude.</p>
 <p>An Arbitrary Rural World (AARW) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p16"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 109 mil locais</p>
 <p>Um mapa que usou um método de geração inteligente para incluir apenas locais rurais. Ideal para quem procura um mapa rural acessível, mas ainda desafiador.</p>
 <p>Dirty World (DW) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p17"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 79 mil locais</p>
 <p>Um mapa focado em estradas de terra/sem pavimento. Os locais são escolhidos arbitrariamente pelo gerador de forma um pouco semelhante ao An Arbitrary Rural World.</p>
 <p>A Rural World (ARW) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p18"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 72 mil locais</p>
 <p>Um mapa muito rural, com uma seleção de locais difíceis e às vezes baity misturados ao clima rural normal dos países. Os locais têm a câmera girada para evitar qualquer meta do carro no NMPZ.</p>
 <p>A Competitive World (ACOW) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p19"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 109 mil locais</p>
 <p>Um mapa voltado para o competitivo, com um método de geração que se concentra em locais rurais e estradas de terra, mas ainda apresenta um conjunto significativo de locais urbanos. A distribuição entre países é feita em parte considerando o quão agradável é adivinhar cada país.</p>
 <p>A Pro World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p20"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 110 mil locais</p>
 <p>Este mapa se inclina muito para os países grandes e tem uma quantidade de locais rurais acima da média, mas você ainda verá civilização de vez em quando. Voltado para jogadores avançados e jogos em equipe.</p>
 <p>A Rainbolt World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p21"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 110 mil locais</p>
 <p>Um mapa muito semelhante ao anterior, mas com um viés mais moderado em direção aos países grandes.</p>
 <p>Less-Extreme Regionguessing (LERG) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p22"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 110 mil locais</p>
 <p>Se você quer praticar o region guessing em países grandes o bastante para que clicar no meio simplesmente não resolva, este mapa é perfeito para você. Inclui os 30 maiores países com ampla cobertura no Street View.</p>
 <p>Extreme Regionguessing (ERG) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p23"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 105 mil locais</p>
 <p>Se você acha a <a class="pais" href="south-africa.html">África do Sul</a>, a <a class="pais" href="nigeria.html">Nigéria</a> ou a <a class="pais" href="argentina.html">Argentina</a> pequenas demais, talvez o Extreme Regionguessing seja o mapa para você. Depois de jogar este mapa, que inclui quantidades iguais de locais na <a class="pais" href="russia.html">Rússia</a>, nos <a class="pais" href="united-states.html">EUA</a>, no <a class="pais" href="brazil.html">Brasil</a>, no <a class="pais" href="canada.html">Canadá</a>, na <a class="pais" href="australia.html">Austrália</a>, na <a class="pais" href="indonesia.html">Indonésia</a> e no <a class="pais" href="mexico.html">México</a>, você nunca mais vai reclamar ao pegar um país grande com multiplicadores altos.</p>
 <p>A Tweaked World - Link do mapa</p>
@@ -175,261 +175,261 @@
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p24"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • pinpointable • mais de 15 mil locais</p>
 <p>Um mapa escolhido a dedo focado em jogos com movimento, com informações confirmadas em menos de 3 minutos de movimento. Se você quer aprimorar suas habilidades de 5k, este mapa pode ser perfeito para você.</p>
 <p>An Extensive Urban World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p25"><figure><a href="https://www.plonkit.net/images/map-directory/difficulty.webp"><img src="https://www.plonkit.net/images/map-directory/difficulty.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 107 mil locais</p>
 </div></div>
 <h3 id="outros-mapas-mundi">Outros mapas-múndi</h3>
-<div class="prosa">
+<div class="prosa" id="p26">
 <p>Esta seção traz mapas-múndi que têm algum tipo de peculiaridade, o que muitas vezes os torna pouco ideais para jogos competitivos. Ainda assim, esses mapas são bem feitos e oferecem um tipo diferente de desafio.</p>
 <p>A Skewed World - Link do mapa</p>
 </div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p27"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 63 mil locais • Somente NMPZ</p>
 <p>Um mapa com um conceito único: todos os locais estão voltados para longe da estrada, em um ângulo aproximadamente perpendicular, o que torna muitos locais deste mapa extremamente difíceis. Deve ser jogado apenas em NMPZ.</p>
 <p>Sidetrek - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p28"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 110 mil locais • Somente NMPZ</p>
 <p>Este mapa apresenta um conceito muito único. Mistura locais com a câmera girada para o lado da estrada e locais normais, todos escolhidos a dedo por serem interessantes, baity ou muito fáceis de adivinhar a região.</p>
 <p>A Totally Normal Zoom World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p29"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 37 mil locais • Somente NMPZ</p>
 <p>Talvez você não consiga jogar GeoGuessr por um telescópio, mas este mapa com certeza faz você sentir que está fazendo isso.</p>
 <p>AI Populated World (AI Pop) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p30"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 100 mil locais</p>
 <p>Um mapa que usou estatísticas populacionais para decidir quantos locais alocar a cada país e suas subdivisões. Na prática, isso significa que países muito populosos ficam significativamente sobrerrepresentados em comparação com outros mapas.</p>
 <p>AI Degenerated World (AI Degen) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p31"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 110 mil locais • NMPZ recomendado</p>
 <p>Cansado de ver a <a class="pais" href="russia.html">Rússia</a> e a <a class="pais" href="indonesia.html">Indonésia</a> a cada poucos jogos? Este mapa tem a resposta, com exatamente a mesma quantidade de locais em quase todos os países e territórios. Os locais têm a câmera girada para longe de grandes metas do carro, então jogar NMPZ pode trazer um desafio extra.</p>
 <p>Terminus - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p32"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 90 mil locais</p>
 <p>Locais de fim de cobertura podem estar entre os mais interessantes do Street View. Este mapa contém apenas esse tipo de local e, por isso, pode ser extremamente interessante e desafiador, principalmente ao jogar NMPZ, já que todos os locais têm a câmera girada para longe da cobertura.</p>
 <p>Intersectionguessr - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p33"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • pinpointable • mais de 100 mil locais</p>
 <p>Todos os locais deste mapa ficam em uma interseção. Experimente este mapa se você procura um desafio de pinpoint diferente dos locais escolhidos a dedo de sempre do ACW e do AOW.</p>
 <p>GeoTime - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p34"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 127 mil locais</p>
 <p>Outro mapa com uma reviravolta interessante na distribuição usual de locais: todos os locais ficam a pelo menos 10 km uns dos outros. Isso significa que os países maiores ficam (muito) sobrerrepresentados e os países menores, sub-representados. Ideal para quem gosta de fazer region guessing em países grandes.</p>
 <p>A Curated Planet - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p35"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 12 mil locais • NMPZ recomendado</p>
 <p>Este mapa traz rodadas com a câmera girada de modo que o país seja descobrível, mas a meta do carro e os textos fiquem fora de vista. Ideal para jogos de NMPZ e Chatguessr.</p>
 <p>A Pinpointable World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p36"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • pinpointable • mais de 3 mil locais</p>
 <p>Um mapa feito para conseguir pontuações perfeitas sem se mover. Você sempre terá informação suficiente no local inicial para saber exatamente onde está.</p>
 <p>Geodetective - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p37"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • pinpointable • mais de 500 locais</p>
 <p>Outro mapa escolhido a dedo feito para conseguir pontuações perfeitas No Moving.</p>
 <p>I Saw The Sign - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p38"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 2 mil locais</p>
 <p>Os locais deste mapa sempre terão a cidade ou o município diretamente à vista.</p>
 <p>A Rural Trekker World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p39"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 6 mil locais</p>
 <p>Locais de trekkers oficiais remotos de todo o mundo. Esqueça a infraestrutura e use a paisagem e a vegetação para adivinhar em que lugar do mundo você está.</p>
 <p>Plonk It - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p40"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 6 mil locais</p>
 <p>Este mapa reúne todos os locais compartilhados no servidor do Discord do Plonk It. Rodadas difíceis, vistas lindas, pessoas acenando para o carro do Google e muitos animais: tudo que um membro do Plonk It achou interessante o bastante para compartilhar entra neste mapa.</p>
 <p>Plonk It Extreme - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p41"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 600 locais</p>
 <p>Uma coleção selecionada dos locais mais difíceis e extremos compartilhados no servidor do Discord; prepare-se para errar o continente neste mapa.</p>
 <p>A Wonderful World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p42"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 11 mil locais • NMPZ recomendado</p>
 <p>Este mapa abrange uma ampla variedade de locais de aparência interessante e foi feito pensando na jogabilidade NMPZ. Embora muitos locais rurais sejam bem difíceis de adivinhar, você pode ter certeza de que a vista vai entreter.</p>
 </div></div>
 <h3 id="mapas-mundi-tematicos">Mapas-múndi temáticos</h3>
-<div class="prosa">
+<div class="prosa" id="p43">
 <p>Nesta seção você encontra mapas interessantes e divertidos, geralmente com poucos locais, mas muito bem escolhidos. Esses mapas são ideais para jogos singleplayer e multiplayer casuais, como Live Challenges ou Chatguessr.</p>
 <p>An Extraordinary World - Link do mapa</p>
 </div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p44"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 38 mil locais • Inclui cobertura não oficial</p>
 <p>Explore as maravilhas do mundo neste mapa, que tem locais bonitos e interessantes em quase todos os países do mundo.</p>
 <p>Camera Obscura - An Interesting World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p45"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 7 mil locais</p>
 <p>Uma coleção de locais interessantes, incluindo tanto coisas feitas pelo homem, como prédios e estátuas, quanto maravilhas naturais. Os locais têm a câmera girada em direção ao item interessante.</p>
 <p>Aesthetic World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p46"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 1500 locais</p>
 <p>Se você está ansioso por uma bela vista, urbana ou rural, este é o mapa perfeito.</p>
 <p>Beauty of Streetview - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p47"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 1300 locais</p>
 <p>Locais deslumbrantes ao redor do mundo, focados principalmente na beleza natural.</p>
 <p>A Military World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p48"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 300 locais</p>
 <p>De castelos medievais a tanques modernos, tudo relacionado a assuntos militares tem lugar neste mapa.</p>
 <p>A Thrilling World: Roller Coasters/Amusement Parks - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p49"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 1500 locais</p>
 <p>Sinta uma descarga de adrenalina sem sair de casa jogando este mapa, que cobre montanhas-russas e parques de diversão em quase todos os países com cobertura oficial.</p>
 <p>An Empty World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p50"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 900 locais • Somente NMPZ</p>
 <p>O mapa perfeito para quando você está cansado de olhar pistas. Locais em sua maioria planos e vazios em todo o mundo.</p>
 <p>The Fog - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p51"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 1 mil locais • NMPZ recomendado</p>
 <p>Uma coleção de locais com neblina ou névoa. Não importa onde você esteja no mundo, a neblina está chegando.</p>
 <p>A Flooded World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p52"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 500 locais</p>
 <p>Se na infância você pisava em todas as poças que encontrava, vai gostar deste mapa de locais onde a água está perigosamente perto do carro do Google.</p>
 <p>Wild Animals - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p53"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 400 locais</p>
 <p>Uma coleção de animais selvagens flagrados por câmeras oficiais do Google em todo o mundo. O animal sempre estará no centro da tela.</p>
 </div></div>
 <h3 id="mapas-de-cobertura-nao-oficial">Mapas de cobertura não oficial</h3>
-<div class="prosa">
+<div class="prosa" id="p54">
 <p>Embora a cobertura oficial seja obrigatória para qualquer mapa competitivo sério, há alguns mapas de alta qualidade feitos inteiramente com photospheres. Esqueça todo o seu conhecimento de meta de câmera e cobertura e divirta-se com esses mapas interessantes.</p>
 <p>A Drone World - Bird’s-eye view - Link do mapa</p>
 </div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p55"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 34 mil locais</p>
 <p>Cansado de olhar rodadas do chão? Este mapa traz photospheres aéreas de todo o mundo. De cidades movimentadas aos picos mais altos, este mapa trará uma nova perspectiva aos seus jogos.</p>
 <p>Geoguessr in 2069 - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p56"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 1 mil locais • NMPZ recomendado</p>
 <p>Este mapa usa photospheres de alta qualidade para simular a experiência do GeoGuessr, incluindo muitos países sem cobertura oficial. Recomendado para jogar NMPZ.</p>
 <p>An Unofficial Street World - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p57"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • não pinpointable • mais de 5 mil locais</p>
 <p>Outra tentativa de um mapa-múndi feito inteiramente com cobertura não oficial, em que todos os locais ficam em uma estrada.</p>
 <p>GeoDetective World 🌍 - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p58"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • pinpointable • mais de 5 mil locais</p>
 <p>Esta versão mundial do conceito GeoDetective usa principalmente photospheres (embora também tenha alguma cobertura oficial) de alta qualidade e com bússola precisa. Quase todos os locais devem ser pinpointable, mas alguns podem consumir muito tempo ou até ser impossíveis de encontrar.</p>
 </div></div>
 <h3 id="mapas-regionais">Mapas regionais</h3>
-<div class="prosa">
+<div class="prosa" id="p59">
 <p>Quer você queira aprimorar suas habilidades resolvendo 50/50s difíceis em uma região específica, quer apenas se divertir jogando só uma pequena parte do mundo, estes mapas regionais de alta qualidade devem ser um ótimo ponto de partida.</p>
 <p>A Community Europe (ACE) - Link do mapa</p>
 </div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/pinpointable.webp"><img src="https://www.plonkit.net/images/map-directory/pinpointable.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p60"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido a dedo • pinpointable • mais de 40 mil locais</p>
 <p>An Arbitrary Europe (AAE) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p61"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 100 mil locais</p>
 <p>Este mapa da Europa é equilibrado pensando em country streaks. Recomenda-se jogar NM e NMPZ.</p>
 <p>An Arbitrary North America (AANA) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p62"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 50 mil locais</p>
 <p>Da gelada Prudhoe Bay, no <a class="pais" href="alaska.html">Alasca</a>, à tropical San José, na <a class="pais" href="costa-rica.html">Costa Rica</a>, explore o continente norte-americano neste mapa.</p>
 <p>The C . U . M . Zone - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p63"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 100 mil locais</p>
 <p>Teste seu conhecimento dos três grandes países norte-americanos neste mapa, que tem exatamente a mesma quantidade de locais em cada um.</p>
 <p>An Arbitrary Latin America (AA Latam) - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p64"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 100 mil locais</p>
 <p>O principal mapa para jogar streaks na América Latina. Feito para jogos sem movimento, também se recomenda o script “No car No compass” ao jogar este mapa.</p>
 <p>An Arbitrary South America - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p65"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 50 mil locais</p>
 <p>Se você prefere barreiras geográficas a culturais, neste mapa você encontrará países estritamente do continente sul-americano.</p>
 <p>An Arbitrary Asia - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p66"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 50 mil locais</p>
 <p>Se a shitcam não é para você e você ainda quer praticar a Ásia, este mapa pode ser o ideal.</p>
 <p>An Arbitrary Africa - Link do mapa</p>
 </div></div>
 <figure class="solta"><a href="https://www.plonkit.net/images/map-directory/handpicked.webp"><img src="https://www.plonkit.net/images/map-directory/handpicked.webp" alt="" loading="lazy" decoding="async"></a></figure>
-<div class="pista lado"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista lado" id="p67"><figure><a href="https://www.plonkit.net/images/map-directory/full-circle.webp"><img src="https://www.plonkit.net/images/map-directory/full-circle.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>Escolhido arbitrariamente • não pinpointable • mais de 30 mil locais</p>
 <p>Descubra o continente africano com este mapa. Jogue com o script No Car No Compass ou com NMPZ para um desafio extra.</p>
 </div></div>
@@ -440,5 +440,6 @@
 <div class="flutuantes"><button id="secoes-btn" type="button" aria-expanded="false">☰ Seções</button><button id="topo-btn" type="button" aria-label="Voltar ao topo">↑ Topo</button></div>
 <dialog id="zoom" class="zoom" aria-label="Imagem ampliada"><img alt=""><div class="barra"><button class="ant" type="button" aria-label="Imagem anterior">←</button><span class="pos"></span><button class="prox" type="button" aria-label="Próxima imagem">→</button><a class="orig" target="_blank" rel="noopener">Abrir</a><button class="fechar" type="button">Fechar ✕</button></div></dialog>
 <script src="site.js" defer></script>
+
 </body>
 </html>

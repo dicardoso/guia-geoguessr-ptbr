@@ -25,9 +25,14 @@ conteudo/pt/     TRADUÇÃO — é aqui que se corrige e melhora o texto
 tools/           scripts e glossário
   build.py         gera o site (layout, cards de pista, links entre países)
   paises.py        nomes dos países, continentes e variantes usadas nos links
-  assets/          estilo.css e site.js (copiados para docs/ no build)
+  categorias.py    categorias dos filtros da busca (classificadas pelo texto em inglês)
+  assets/          estilo.css, site.js, busca.js e quiz.js (copiados para docs/ no build)
 docs/            site pronto, gerado pelo build (publicado no GitHub Pages)
 ```
+
+O build também gera `docs/busca.html` (busca em todas as pistas, com filtros por categoria e
+continente), `docs/quiz.html` (adivinhe o país a partir de uma pista) e `docs/pistas.js`, o índice
+usado pelos dois. Tudo funciona tanto no GitHub Pages quanto abrindo os arquivos direto do disco.
 
 Para mudar o visual, edite `tools/assets/estilo.css` (não o de `docs/`, que é sobrescrito no build).
 Depois de criar o repositório, preencha `LINK_ERROS` em `tools/build.py` com o link das issues

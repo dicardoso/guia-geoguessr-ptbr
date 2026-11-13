@@ -10,6 +10,7 @@ Uso: python -I tools/build.py conteudo/pt docs
 - Páginas ainda não traduzidas são ignoradas (aparecem sem link no índice).
 """
 import html
+import json
 import re
 import shutil
 import sys
@@ -17,6 +18,7 @@ import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from categorias import CATEGORIAS, classificar  # noqa: E402
 from paises import CONTINENTES, EXCECOES, GERAIS, NAO_PUBLICAR, VARIANTES  # noqa: E402
 
 SITE = "Guia de GeoGuessr em Português"
@@ -76,7 +78,7 @@ def linkar_paises(texto: str, pagina_atual: str, prontas: set) -> str:
 
 # ------------------------------------------------------------ partes da página
 def cabecalho(ativa: str | None) -> str:
-    itens = [("index", "Países")] + list(GERAIS.items())
+    itens = [("index", "Países"), ("busca", "Buscar pistas"), ("quiz", "Quiz")] + list(GERAIS.items())
     links = "".join(
         f'<a href="{p}.html"{" aria-current=page" if p == ativa else ""}>{n}</a>' for p, n in itens
     )
@@ -122,7 +124,7 @@ TEMA_INICIAL = (
 
 
 def documento(titulo: str, ativa: str | None, conteudo: str, pagina: str | None,
-              lateral: str = "", descricao: str = "") -> str:
+              lateral: str = "", descricao: str = "", scripts: tuple = ()) -> str:
     desc = f'<meta name="description" content="{html.escape(descricao)}">\n' if descricao else ""
     flutuantes = '<div class="flutuantes">'
     if lateral:
@@ -149,6 +151,7 @@ def documento(titulo: str, ativa: str | None, conteudo: str, pagina: str | None,
 {flutuantes}
 {ZOOM}
 <script src="site.js" defer></script>
+{"".join(f'<script src="{js}" defer></script>' for js in scripts)}
 </body>
 </html>
 """
@@ -192,12 +195,22 @@ def texto(linha: str, pagina: str, prontas: set) -> str:
     return f"<{tag}>{t}</{tag}>"
 
 
-def converter(fragmento: str, pagina: str, prontas: set):
-    """Agrupa o fragmento traduzido em blocos. Retorna (titulo, html, secoes)."""
-    titulo, blocos, secoes, usados = None, [], [], set()
-    grupo = None  # {"img": (...), "textos": [...]}
+def converter(fragmento: str, pagina: str, prontas: set, fragmento_en: str = ""):
+    """Agrupa o fragmento traduzido em blocos. Retorna (titulo, html, secoes, pistas).
+
+    pistas: registros para a busca/quiz — (id, secao, src_imagem, texto_puro, eh_card_lateral).
+    """
+    titulo, blocos, secoes, usados, pistas = None, [], [], set(), []
+    grupo = None  # {"img": (...), "textos": [...], "puros": [...]}
     prosa: list[str] = []
+    prosa_pura: list[str] = []
     viu_secao = False
+
+    def registrar(src, puros, lado):
+        ident = f"p{len(pistas) + 1}"
+        pistas.append((ident, len(secoes) - 1, src, " ".join(p for p, _ in puros), lado,
+                       " ".join(e for _, e in puros)))
+        return ident
 
     def fechar_grupo():
         nonlocal grupo
@@ -211,16 +224,22 @@ def converter(fragmento: str, pagina: str, prontas: set):
         elif not textos:
             blocos.append(figura(src, alt, cap, ' class="solta"'))
         else:
-            lado = " lado" if w and w < 900 or (not w) else ""
-            blocos.append(f'<div class="pista{lado}">{figura(src, alt, cap)}<div class="texto">\n{textos}\n</div></div>')
+            lado = (0 < w < 900) or not w
+            ident = registrar(src, grupo["puros"], lado)
+            blocos.append(f'<div class="pista{" lado" if lado else ""}" id="{ident}">{figura(src, alt, cap)}'
+                          f'<div class="texto">\n{textos}\n</div></div>')
         grupo = None
 
     def fechar_prosa():
         if prosa:
-            blocos.append('<div class="prosa">\n' + "\n".join(prosa) + "\n</div>")
+            ident = registrar("", prosa_pura, False)
+            blocos.append(f'<div class="prosa" id="{ident}">\n' + "\n".join(prosa) + "\n</div>")
             prosa.clear()
+            prosa_pura.clear()
 
-    for linha in fragmento.splitlines():
+    linhas_en = fragmento_en.splitlines()
+    for n_linha, linha in enumerate(fragmento.splitlines()):
+        linha_en = linhas_en[n_linha] if n_linha < len(linhas_en) else ""
         linha = linha.strip()
         if not linha:
             continue
@@ -243,14 +262,17 @@ def converter(fragmento: str, pagina: str, prontas: set):
         m = RE_IMG.match(linha)
         if m:
             fechar_grupo(); fechar_prosa()
-            grupo = {"img": (m.group(1), m.group(2) or "", m.group(3) or ""), "textos": []}
+            grupo = {"img": (m.group(1), m.group(2) or "", m.group(3) or ""), "textos": [], "puros": []}
             if secoes:
                 secoes[-1][2] += 1
             continue
+        puro = html.unescape(re.sub(r"<[^>]+>", "", linha)).strip()
         linha = texto(linha, pagina, prontas)
         (grupo["textos"] if grupo is not None else prosa).append(linha)
+        puro_en = html.unescape(re.sub(r"<[^>]+>", "", linha_en)).strip()
+        (grupo["puros"] if grupo is not None else prosa_pura).append((puro, puro_en))
     fechar_grupo(); fechar_prosa()
-    return titulo, "\n".join(blocos), secoes
+    return titulo, "\n".join(blocos), secoes, pistas
 
 
 def sumario_lateral(secoes) -> str:
@@ -279,8 +301,8 @@ def vizinhos(pagina: str, prontas: set) -> str:
     return f'<nav class="vizinhos" aria-label="Outros países de {cont}">{"".join(partes)}</nav>' if partes else ""
 
 
-def pagina_conteudo(pagina: str, fragmento: str, prontas: set) -> str:
-    titulo, corpo, secoes = converter(fragmento, pagina, prontas)
+def pagina_conteudo(pagina: str, fragmento: str, prontas: set, indice: dict, fragmento_en: str = "") -> str:
+    titulo, corpo, secoes, pistas = converter(fragmento, pagina, prontas, fragmento_en)
     titulo = titulo or NOME.get(pagina) or GERAIS.get(pagina) or pagina
     cont = CONTINENTE_DE.get(pagina)
     trilha = (f'<div class="trilha"><a href="index.html">Países</a> › {cont}</div>' if cont
@@ -288,6 +310,7 @@ def pagina_conteudo(pagina: str, fragmento: str, prontas: set) -> str:
     acoes = (f'<div class="acoes"><a class="botao" href="{ORIGINAL}/{pagina}" target="_blank" rel="noopener">'
              f'Ver original em inglês ↗</a></div>')
     conteudo = f"{trilha}\n<h1>{titulo}</h1>\n{acoes}\n{corpo}\n{vizinhos(pagina, prontas)}"
+    indice[pagina] = (titulo, [t for _, t, _ in secoes], pistas)
     desc = f"Dicas de GeoGuessr para identificar {titulo}: tradução do Plonk It Guide." if cont else ""
     return documento(titulo, pagina if pagina in GERAIS else None, conteudo, pagina,
                      sumario_lateral(secoes), desc)
@@ -304,6 +327,13 @@ def gerar_index(prontas: set) -> str:
         "<strong>pistas regionais</strong> (estados, províncias, regiões) e "
         "<strong>destaque</strong> (pistas bem específicas). Clique nas imagens para ampliar.</p>",
         "</div>",
+        "<h3>Explorar</h3>",
+        '<ul class="cartoes destaque">'
+        '<li><a href="busca.html"><span class="icone">⌕</span>Buscar nas pistas'
+        '<small>Ex.: “poste escada”, “placa amarela”, “bollard vermelho”</small></a></li>'
+        '<li><a href="quiz.html"><span class="icone">?</span>Quiz'
+        '<small>Veja uma pista e adivinhe o país</small></a></li>'
+        "</ul>",
         "<h3>Guias gerais</h3>",
         '<ul class="cartoes">'
         + "".join(f'<li><a href="{p}.html">{n}</a></li>' for p, n in GERAIS.items() if p in prontas)
@@ -325,6 +355,74 @@ def gerar_index(prontas: set) -> str:
                      descricao="Tradução em português do Plonk It Guide: dicas de GeoGuessr para cada país.")
 
 
+# --------------------------------------------------------- busca e quiz (fase 2)
+def gerar_indice_json(indice: dict) -> str:
+    """Índice compacto de todas as pistas, usado por busca.js e quiz.js.
+
+    pistas: [pagina, secao, id, imagem, texto, categorias(bitmask), quiz(0/1)]
+    """
+    paginas, pistas = {}, []
+    for pagina, (titulo, secoes, regs) in sorted(indice.items()):
+        cont = CONTINENTE_DE.get(pagina, "")
+        nomes = [n for n, s in _ALVOS.items() if s == pagina]
+        paginas[pagina] = [titulo, cont, secoes, nomes]
+        for ident, sec, src, txt, lado, txt_en in regs:
+            if not txt:
+                continue
+            quiz = int(bool(cont) and bool(src) and lado)
+            pistas.append([pagina, sec, ident, src, txt, classificar(txt_en), quiz])
+    dados = {
+        "categorias": [[cid, rot] for cid, rot, _ in CATEGORIAS],
+        "continentes": list(CONTINENTES),
+        "paginas": paginas,
+        "pistas": pistas,
+    }
+    return json.dumps(dados, ensure_ascii=False, separators=(",", ":"))
+
+
+def gerar_busca() -> str:
+    conteudo = """<div class="trilha"><a href="index.html">Início</a> › Explorar</div>
+<h1>Buscar nas pistas</h1>
+<p class="intro">Procure em todas as pistas do guia de uma vez: “poste escada”, “placa amarela”,
+“terra vermelha”, “cirílico”… Combine com os filtros para ver, por exemplo, todos os bollards da Europa.</p>
+<div class="busca-form">
+  <input id="q" class="busca" type="search" placeholder="O que você está vendo?" aria-label="Termos da busca" autocomplete="off" autofocus>
+  <select id="cont" class="seletor" aria-label="Continente"><option value="">Todos os continentes</option></select>
+</div>
+<div id="cats" class="chips" role="group" aria-label="Categorias"></div>
+<p class="aviso-filtro">As categorias são automáticas (por palavras-chave) e podem falhar em alguns casos.</p>
+<p id="status" class="status" aria-live="polite">Carregando índice…</p>
+<ol id="resultados" class="resultados"></ol>
+<button id="mais" class="botao mais" type="button" hidden>Mostrar mais resultados</button>"""
+    return documento("Buscar nas pistas", "busca", conteudo, None,
+                     descricao="Busque em todas as pistas do guia de GeoGuessr em português.",
+                     scripts=("pistas.js", "busca.js"))
+
+
+def gerar_quiz() -> str:
+    conteudo = """<div class="trilha"><a href="index.html">Início</a> › Explorar</div>
+<h1>Quiz: de onde é essa pista?</h1>
+<div class="quiz-opcoes">
+  <label>Continente <select id="qz-cont" class="seletor"><option value="">Todos</option></select></label>
+  <label>Dificuldade <select id="qz-dif" class="seletor">
+    <option value="facil">Fácil — alternativas de qualquer lugar</option>
+    <option value="dificil" selected>Difícil — alternativas do mesmo continente</option>
+  </select></label>
+</div>
+<div class="placar" aria-live="polite">
+  <span>Acertos <strong id="qz-acertos">0</strong>/<strong id="qz-total">0</strong></span>
+  <span>Sequência <strong id="qz-seq">0</strong></span>
+  <span>Recorde <strong id="qz-rec">0</strong></span>
+</div>
+<div id="qz-carta" class="quiz-carta">
+  <p class="status">Carregando pistas…</p>
+</div>
+<p class="dica-teclado">Atalhos: teclas <kbd>1</kbd>–<kbd>4</kbd> para responder, <kbd>Enter</kbd> para a próxima.</p>"""
+    return documento("Quiz", "quiz", conteudo, None,
+                     descricao="Quiz de GeoGuessr: veja uma pista e adivinhe o país.",
+                     scripts=("pistas.js", "quiz.js"))
+
+
 # ---------------------------------------------------------------------- main
 def main(origem: str, destino: str):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -336,10 +434,19 @@ def main(origem: str, destino: str):
         if nome not in conhecidas:
             print(f"aviso: {nome} não está em tools/paises.py")
     prontas = {n for n in arquivos if n not in NAO_PUBLICAR}
+    indice: dict = {}
+    dir_en = origem.parent / "en"  # texto original alinhado, usado para classificar as pistas
     for nome in sorted(prontas):
-        saida = pagina_conteudo(nome, arquivos[nome].read_text(encoding="utf-8"), prontas)
+        en = dir_en / f"{nome}.html"
+        saida = pagina_conteudo(nome, arquivos[nome].read_text(encoding="utf-8"), prontas, indice,
+                                en.read_text(encoding="utf-8") if en.exists() else "")
         (destino / f"{nome}.html").write_text(saida, encoding="utf-8", newline="\n")
     (destino / "index.html").write_text(gerar_index(prontas), encoding="utf-8", newline="\n")
+    (destino / "busca.html").write_text(gerar_busca(), encoding="utf-8", newline="\n")
+    (destino / "quiz.html").write_text(gerar_quiz(), encoding="utf-8", newline="\n")
+    # Como script (e não .json) para funcionar também abrindo os arquivos direto do disco (file://).
+    (destino / "pistas.js").write_text("window.PISTAS=" + gerar_indice_json(indice) + ";\n",
+                                       encoding="utf-8", newline="\n")
     for asset in ASSETS.iterdir():
         shutil.copyfile(asset, destino / asset.name)
     (destino / ".nojekyll").write_text("", encoding="utf-8")

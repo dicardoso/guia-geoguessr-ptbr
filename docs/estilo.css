@@ -221,3 +221,89 @@ dialog.zoom .barra button, dialog.zoom .barra a {
 }
 .rodape .interno { max-width: 940px; margin: auto; padding: 20px 16px 88px; }
 .rodape p { margin: 0 0 8px; }
+
+/* ---------- Fase 2: cartões de destaque, pista alvo ---------- */
+.cartoes.destaque a { display: flex; flex-direction: column; gap: 2px; padding: 16px 18px; }
+.cartoes.destaque .icone { font-size: 1.4em; line-height: 1; margin-bottom: 4px; }
+.cartoes.destaque small { color: var(--muted); font-weight: 400; font-size: .86em; }
+.pista:target, .prosa:target { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- Busca ---------- */
+.busca-form { display: flex; gap: 8px; flex-wrap: wrap; }
+.busca-form .busca { flex: 1 1 260px; margin: 0; }
+.seletor {
+  padding: 10px 12px; font: inherit; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--surface); color: var(--fg); max-width: 100%;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 4px; }
+.chip {
+  border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px;
+  padding: 5px 12px; font: inherit; font-size: .88em; cursor: pointer;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.aviso-filtro { color: var(--muted); font-size: .8em; margin: 4px 0 12px; }
+.status { color: var(--muted); }
+.status .exemplo {
+  border: 1px dashed var(--line); background: transparent; color: var(--accent); border-radius: 999px;
+  padding: 2px 10px; font: inherit; font-size: .92em; cursor: pointer; margin: 2px 0;
+}
+.resultados { list-style: none; padding: 0; margin: 8px 0; display: grid; gap: 10px; }
+.resultado a {
+  display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 14px; align-items: start;
+  padding: 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+  color: var(--fg); text-decoration: none; box-shadow: var(--shadow);
+}
+.resultado a:hover { border-color: var(--accent); }
+.resultado img, .resultado .sem-img {
+  width: 150px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; background: var(--surface-2);
+}
+.resultado .sem-img { display: grid; place-items: center; color: var(--muted); font-size: 1.6em; }
+.resultado .corpo { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.resultado .onde { font-size: .88em; color: var(--muted); }
+.resultado .onde strong { color: var(--accent); }
+.resultado .trecho { font-size: .95em; }
+mark { background: #ffe58a; color: #1c2128; border-radius: 3px; padding: 0 2px; }
+@media (max-width: 560px) {
+  .resultado a { grid-template-columns: 96px minmax(0, 1fr); gap: 10px; }
+  .resultado img, .resultado .sem-img { width: 96px; }
+}
+.botao.mais { margin: 8px auto; display: flex; cursor: pointer; font: inherit; }
+
+/* ---------- Quiz ---------- */
+.quiz-opcoes { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.quiz-opcoes label { display: flex; flex-direction: column; gap: 4px; font-size: .88em; color: var(--muted); }
+.placar {
+  display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 10px 14px; margin-bottom: 14px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); font-size: .95em;
+}
+.placar strong { color: var(--fg); }
+.quiz-carta {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 14px;
+}
+.quiz-img { margin: 0 0 14px; text-align: center; }
+.quiz-img img { max-height: 58vh; border-radius: 8px; background: var(--surface-2); }
+.quiz-alternativas { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; }
+.alternativa {
+  display: flex; align-items: center; gap: 10px; text-align: left; padding: 12px 14px; font: inherit;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--fg); cursor: pointer;
+}
+.alternativa:hover:not(:disabled) { border-color: var(--accent); }
+.alternativa:disabled { cursor: default; opacity: .65; }
+.alternativa.certa { opacity: 1; border-color: #1f9d55; background: rgba(31, 157, 85, .16); }
+.alternativa.errada { opacity: 1; border-color: #d64545; background: rgba(214, 69, 69, .16); }
+kbd {
+  display: inline-block; min-width: 1.6em; text-align: center; padding: 1px 6px; border-radius: 5px;
+  border: 1px solid var(--line); background: var(--surface-2); font: .82em ui-monospace, monospace; color: var(--muted);
+}
+.quiz-resposta { margin-top: 14px; padding: 12px 14px; border-radius: 10px; border-left: 4px solid; }
+.quiz-resposta.ok { border-color: #1f9d55; background: rgba(31, 157, 85, .10); }
+.quiz-resposta.erro { border-color: #d64545; background: rgba(214, 69, 69, .10); }
+.quiz-resposta .veredito { font-size: 1.15em; font-weight: 700; margin: 0 0 4px; }
+.quiz-resposta .onde { color: var(--muted); font-size: .88em; margin: 0 0 8px; }
+.quiz-resposta .acoes { margin: 12px 0 0; }
+.botao.primario { background: var(--accent); border-color: var(--accent); color: #fff; cursor: pointer; font: inherit; }
+.botao.primario:hover { filter: brightness(1.1); background: var(--accent); }
+.dica-teclado { color: var(--muted); font-size: .85em; margin-top: 12px; }
+@media (hover: none) { .dica-teclado { display: none; } }

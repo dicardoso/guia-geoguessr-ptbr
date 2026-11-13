@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz · Guia de GeoGuessr em Português</title>
+<meta name="description" content="Quiz de GeoGuessr: veja uma pista e adivinhe o país.">
+<script>try{var t=localStorage.getItem('tema');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="topo"><div class="interno"><a class="marca" href="index.html"><span class="longo">Guia de GeoGuessr em Português</span><span class="curto">Guia GeoGuessr PT</span></a><nav aria-label="Principal"><a href="index.html">Países</a><a href="busca.html">Buscar pistas</a><a href="quiz.html" aria-current=page>Quiz</a><a href="beginners-guide.html">Guia para iniciantes</a><a href="maps.html">Diretório de mapas</a><a href="tools.html">Ferramentas</a><a href="spillover-countries.html">Países de spillover</a></nav><button id="tema-btn" class="botao-icone" type="button" aria-label="Trocar tema">◐</button></div></header>
+<div class="layout">
+<main>
+<div class="trilha"><a href="index.html">Início</a> › Explorar</div>
+<h1>Quiz: de onde é essa pista?</h1>
+<div class="quiz-opcoes">
+  <label>Continente <select id="qz-cont" class="seletor"><option value="">Todos</option></select></label>
+  <label>Dificuldade <select id="qz-dif" class="seletor">
+    <option value="facil">Fácil — alternativas de qualquer lugar</option>
+    <option value="dificil" selected>Difícil — alternativas do mesmo continente</option>
+  </select></label>
+</div>
+<div class="placar" aria-live="polite">
+  <span>Acertos <strong id="qz-acertos">0</strong>/<strong id="qz-total">0</strong></span>
+  <span>Sequência <strong id="qz-seq">0</strong></span>
+  <span>Recorde <strong id="qz-rec">0</strong></span>
+</div>
+<div id="qz-carta" class="quiz-carta">
+  <p class="status">Carregando pistas…</p>
+</div>
+<p class="dica-teclado">Atalhos: teclas <kbd>1</kbd>–<kbd>4</kbd> para responder, <kbd>Enter</kbd> para a próxima.</p>
+</main>
+</div>
+<footer class="rodape"><div class="interno"><p>Tradução não oficial do <a href="https://www.plonkit.net">Plonk It Guide</a>, conteúdo original © 2021-2026 Plonk It, licenciado sob <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br">CC BY-NC-SA 4.0</a>. <strong>Alterações:</strong> texto traduzido para o português e reorganizado em um novo layout; as imagens são carregadas do site original. Esta tradução é distribuída sob a mesma licença. <a href="https://www.plonkit.net">Ver esta página no original (inglês)</a>.</p><p>Este site não é afiliado ao Plonk It nem endossado por ele. Erros de tradução são responsabilidade deste projeto, não da equipe do Plonk It.</p></div></footer>
+<div class="flutuantes"><button id="topo-btn" type="button" aria-label="Voltar ao topo">↑ Topo</button></div>
+<dialog id="zoom" class="zoom" aria-label="Imagem ampliada"><img alt=""><div class="barra"><button class="ant" type="button" aria-label="Imagem anterior">←</button><span class="pos"></span><button class="prox" type="button" aria-label="Próxima imagem">→</button><a class="orig" target="_blank" rel="noopener">Abrir</a><button class="fechar" type="button">Fechar ✕</button></div></dialog>
+<script src="site.js" defer></script>
+<script src="pistas.js" defer></script><script src="quiz.js" defer></script>
+</body>
+</html>

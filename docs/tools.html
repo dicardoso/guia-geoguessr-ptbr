@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-<header class="topo"><div class="interno"><a class="marca" href="index.html"><span class="longo">Guia de GeoGuessr em Português</span><span class="curto">Guia GeoGuessr PT</span></a><nav aria-label="Principal"><a href="index.html">Países</a><a href="beginners-guide.html">Guia para iniciantes</a><a href="maps.html">Diretório de mapas</a><a href="tools.html" aria-current=page>Ferramentas</a><a href="spillover-countries.html">Países de spillover</a></nav><button id="tema-btn" class="botao-icone" type="button" aria-label="Trocar tema">◐</button></div></header>
+<header class="topo"><div class="interno"><a class="marca" href="index.html"><span class="longo">Guia de GeoGuessr em Português</span><span class="curto">Guia GeoGuessr PT</span></a><nav aria-label="Principal"><a href="index.html">Países</a><a href="busca.html">Buscar pistas</a><a href="quiz.html">Quiz</a><a href="beginners-guide.html">Guia para iniciantes</a><a href="maps.html">Diretório de mapas</a><a href="tools.html" aria-current=page>Ferramentas</a><a href="spillover-countries.html">Países de spillover</a></nav><button id="tema-btn" class="botao-icone" type="button" aria-label="Trocar tema">◐</button></div></header>
 <div class="layout com-lateral">
 <aside class="lateral" aria-label="Seções da página"><nav><h2>Nesta página</h2><ol><li><a href="#transformadoras">Transformadoras</a></li><li><a href="#contadores-de-streak">Contadores de streak</a></li><li><a href="#no-jogo-modificadores-de-jogabilidade">No jogo: modificadores de jogabilidade</a></li><li><a href="#no-jogo-informacoes-adicionais">No jogo: informações adicionais</a></li><li><a href="#informacoes-de-multiplayer">Informações de multiplayer</a></li><li><a href="#criacao-de-mapas">Criação de mapas</a></li><li><a href="#navegacao-cosmeticos-e-estatisticas">Navegação, cosméticos e estatísticas</a></li><li><a href="#quizzes">Quizzes</a></li></ol></nav></aside>
 <main>
 <div class="trilha"><a href="index.html">Início</a> › Guias gerais</div>
 <h1>Scripts e ferramentas</h1>
 <div class="acoes"><a class="botao" href="https://www.plonkit.net/tools" target="_blank" rel="noopener">Ver original em inglês ↗</a></div>
-<div class="pista"><figure><a href="https://www.plonkit.net/images/resize/1920/80/common/scripts-hero.webp"><img src="https://www.plonkit.net/images/resize/1920/80/common/scripts-hero.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
+<div class="pista" id="p1"><figure><a href="https://www.plonkit.net/images/resize/1920/80/common/scripts-hero.webp"><img src="https://www.plonkit.net/images/resize/1920/80/common/scripts-hero.webp" alt="" loading="lazy" decoding="async"></a></figure><div class="texto">
 <p>As ferramentas foram agrupadas em seis categorias gerais e estão ordenadas, grosso modo, das mais conhecidas para as menos conhecidas. Sugestões são bem-vindas.</p>
 <p class="obs"><strong>OBS.:</strong> Os itens chamados abaixo de “scripts” exigem uma extensão de navegador, como o Tampermonkey. Em navegadores baseados em Chromium (Chrome, Opera, Edge, Brave…), os scripts do Tampermonkey também exigem que você ative o Modo do desenvolvedor do navegador. Você encontra o botão para ativá-lo acessando chrome://extensions.</p>
 <p>Ir para a seção</p>
@@ -29,7 +29,7 @@
 </ul>
 </div></div>
 <h3 id="transformadoras">Transformadoras</h3>
-<div class="prosa">
+<div class="prosa" id="p2">
 <p>GeoGuessr Unity Script</p>
 <p>por Jupaoqq e echandler</p>
 <p>Um script multiuso que traz Baidu, Yandex e outras coberturas externas para o GeoGuessr. Seus vários recursos incluem também visão de satélite, teletransporte, máquina do tempo, personalização do minimapa e muito mais. O script original não é mais mantido por Jupaoqq e a cobertura externa pode não funcionar de forma confiável, dependendo do provedor.</p>
@@ -44,7 +44,7 @@
 <p>Um script que adiciona opções para marcar e salvar locais no Map Making App, mostrar as linhas de cobertura do Street View, ativar o modo de terreno, esconder a bússola, esconder diferentes graus de meta do carro e muito mais.</p>
 </div>
 <h3 id="contadores-de-streak">Contadores de streak</h3>
-<div class="prosa">
+<div class="prosa" id="p3">
 <p>Country Streak Counter</p>
 <p>por miraclewhips</p>
 <p>Adiciona um contador automático de Country Streak.</p>
@@ -68,7 +68,7 @@
 <p>Adiciona um contador automático de County Streak. Pode não funcionar em todos os países.</p>
 </div>
 <h3 id="no-jogo-modificadores-de-jogabilidade">No jogo: modificadores de jogabilidade</h3>
-<div class="prosa">
+<div class="prosa" id="p4">
 <p>por macca e victheturtle</p>
 <p>Mostra a rodada brevemente, depois deixa a tela preta e você tem tempo ilimitado para fazer seu palpite.</p>
 <p>mais de 20000 instalações</p>
@@ -95,7 +95,7 @@
 <p>mais de 600 instalações</p>
 </div>
 <h3 id="no-jogo-informacoes-adicionais">No jogo: informações adicionais</h3>
-<div class="prosa">
+<div class="prosa" id="p5">
 <p>Learnable Meta</p>
 <p>Um script que destaca pistas importantes após cada rodada em mapas Learnable Meta feitos sob medida, para ajudar os jogadores a ampliar seu conhecimento e melhorar sua consistência.</p>
 <p>GeoGuessr Path Logger</p>
@@ -116,7 +116,7 @@
 <p>mais de 600 instalações</p>
 </div>
 <h3 id="informacoes-de-multiplayer">Informações de multiplayer</h3>
-<div class="prosa">
+<div class="prosa" id="p6">
 <p>por Charlie Andy</p>
 <p>Um site que acompanha as mudanças de ELO ao longo do tempo, permitindo que os jogadores vejam seu progresso enquanto sobem no ranking.</p>
 <p>GeoGuessr Duels Finder</p>
@@ -141,7 +141,7 @@
 <p>mais de 200 instalações</p>
 </div>
 <h3 id="criacao-de-mapas">Criação de mapas</h3>
-<div class="prosa">
+<div class="prosa" id="p7">
 <p>Map Making App</p>
 <p>Um criador de mapas aprimorado para o GeoGuessr, com marcação de locais, seleção de panoramas e inúmeras outras melhorias de qualidade de vida.</p>
 <p>Map Making App (desktop)</p>
@@ -174,7 +174,7 @@
 <p>Organize e gerencie tags no map making app da ReAnna com pastas, subpastas e a possibilidade de colocar uma tag em várias pastas.</p>
 </div>
 <h3 id="navegacao-cosmeticos-e-estatisticas">Navegação, cosméticos e estatísticas</h3>
-<div class="prosa">
+<div class="prosa" id="p8">
 <p>Liked Maps Advanced Overhaul</p>
 <p>Organize e melhore seus mapas curtidos no GeoGuessr. Adicione tags personalizadas, filtre mapas, com integração instantânea com o Learnable Meta.</p>
 <p>Hide Party Link and Email Address</p>
@@ -209,7 +209,7 @@
 <p>mais de 300 instalações</p>
 </div>
 <h3 id="quizzes">Quizzes</h3>
-<div class="prosa">
+<div class="prosa" id="p9">
 <p>Aprenda e pratique nomes de subdivisões, cidades, códigos de área telefônicos, escritas não latinas e muito mais com mapas interativos. Crie quizzes personalizados para maximizar a utilidade pessoal e estude com o modo Anki.</p>
 <p>Super Duper</p>
 <p>Um mapa interativo dá acesso a milhares de quizzes, desde subdivisões de primeiro e segundo nível e grandes cidades de todos os países até sistemas de numeração de estradas e nomes em escritas não latinas para países mais especializados. Esses quizzes vêm acompanhados de vários mapas de prática do GeoGuessr, imagens e guias.</p>
@@ -223,5 +223,6 @@
 <div class="flutuantes"><button id="secoes-btn" type="button" aria-expanded="false">☰ Seções</button><button id="topo-btn" type="button" aria-label="Voltar ao topo">↑ Topo</button></div>
 <dialog id="zoom" class="zoom" aria-label="Imagem ampliada"><img alt=""><div class="barra"><button class="ant" type="button" aria-label="Imagem anterior">←</button><span class="pos"></span><button class="prox" type="button" aria-label="Próxima imagem">→</button><a class="orig" target="_blank" rel="noopener">Abrir</a><button class="fechar" type="button">Fechar ✕</button></div></dialog>
 <script src="site.js" defer></script>
+
 </body>
 </html>
